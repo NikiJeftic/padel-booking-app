@@ -1,0 +1,16 @@
+<app-booking-section-header title="Padel & Greenpoint" subtitle="73 West Street, Brooklyn">
+</app-booking-section-header><app-date-picker></app-date-picker>
+<div class="bg-[#F5F7FA]">
+    <app-availability-toggle label="Show available slots only" (valueChange)="showAvailableSlotsOnly = $event">
+    </app-availability-toggle>
+    <app-time-picker></app-time-picker>
+    <app-booking-section-header title="Book a court"
+        subtitle="Create a private match where you can invite your friends">
+    </app-booking-section-header>
+    <app-availability-toggle label="Show available courts only" (valueChange)="showAvailableSlotsOnly = $event">
+    </app-availability-toggle>
+    @for (court of courts; track court.id; let i = $index) {
+    <app-court-selection-item [court]="court" [expanded]="expandedIndex === i"
+        (expandedChange)="expandedIndex = expandedIndex === i ? -1 : i" (pricingSelected)="onPricingSelected($event)" />
+    }
+</div>

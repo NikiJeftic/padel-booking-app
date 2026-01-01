@@ -1,0 +1,11 @@
+<div class="grid grid-cols-4 gap-3 px-5 py-4">
+    @for (time of times; track time) {
+    <button (click)="selectTime(time)" class="h-12 rounded-lg border text-sm font-medium transition" [ngClass]="
+        time === selectedTime
+          ? 'bg-[#232E37] text-white border-[#232E37]'
+          : 'bg-white border-gray-300 text-gray-700'
+      ">
+        {{ time }}
+    </button>
+    }
+</div>

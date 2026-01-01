@@ -1,0 +1,27 @@
+<div class="overflow-x-auto no-scrollbar py-4 scroll-smooth bg-gray-100">
+    <div class="flex gap-4 px-5 items-center">
+        @for(date of dates; track date; let i = $index) {
+        @if(isNewMonth(i)) {
+        <div class="border-r border-gray-300 h-12 mx-2"></div>
+        }
+
+        <div (click)="selectDate(date)" class="flex flex-col items-center cursor-pointer">
+            <p class="text-[10px] text-gray-500 uppercase">
+                {{ date | date:'EEE' }}
+            </p>
+
+            <div class="h-10 w-10 rounded-full flex items-center justify-center" [ngClass]="
+            date.toDateString() === selectedDate.toDateString()
+              ? 'bg-[#232E37] text-white font-semibold'
+              : 'bg-white border border-gray-300 text-gray-700'
+          ">
+                {{ date | date:'d' }}
+            </div>
+
+            <p class="text-[10px] text-gray-500">
+                {{ date | date:'MMM' }}
+            </p>
+        </div>
+        }
+    </div>
+</div>
