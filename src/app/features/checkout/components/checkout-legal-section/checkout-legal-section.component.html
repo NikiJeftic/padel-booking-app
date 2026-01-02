@@ -1,0 +1,70 @@
+<div class="space-y-6">
+    <!-- Cancellation policy card -->
+    <div class="bg-white rounded-xl border border-gray-200 p-4 space-y-4">
+
+        <!-- Header -->
+        <div class="flex items-center gap-3">
+            <!-- Document icon -->
+            <svg class="h-6 w-6 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+
+            <div class="font-semibold text-[#232E37]">
+                Booking Cancellation Policy
+            </div>
+        </div>
+
+        <!-- Valid until -->
+        <div class="text-sm text-red-500">
+            Valid up until 24 hours before the booking*
+        </div>
+
+        <!-- Before -->
+        <div>
+            <div class="font-semibold text-[#232E37]">
+                Before Thursday, 01 January | 17:00
+            </div>
+            <div class="text-sm text-gray-600">
+                You will receive a refund within 2 to 10 days (depending on the bank)
+                to your original payment method.
+            </div>
+        </div>
+
+        <!-- After -->
+        <div>
+            <div class="font-semibold text-[#232E37]">
+                After Thursday, 01 January | 17:00
+            </div>
+            <div class="text-sm text-gray-600">
+                Non-cancellable.*
+            </div>
+        </div>
+
+        <!-- Note -->
+        <div class="text-sm text-gray-500">
+            Please note that this service is provided by the club.
+        </div>
+
+        <!-- Read more -->
+        <button class="text-sm text-blue-600 font-medium">
+            Read More
+        </button>
+    </div>
+
+    <!-- Marketing consent -->
+    <div class="flex gap-3 items-start px-1">
+        <input type="checkbox" class="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-600"
+            [checked]="marketingConsent" (change)="toggleConsent()" />
+
+        <div class="text-sm">
+            <div class="font-medium text-[#232E37]">
+                Marketing communications from your favourite Clubs
+            </div>
+            <div class="text-gray-500">
+                I consent to receive marketing communications from my favorite Clubs
+                (in this context, the Club will act as Data Controller of my personal data)
+            </div>
+        </div>
+    </div>
+</div>

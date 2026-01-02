@@ -1,0 +1,144 @@
+<div class="bg-white rounded-xl border border-gray-200 ">
+
+    <!-- Booking summary -->
+    <div class="flex items-stretch p-6">
+        <!-- Left content -->
+        <div class="flex-1 space-y-1">
+            <div class="font-semibold text-[#232E37]">
+                Friday, 02 January 11:00 – 12:00
+            </div>
+            <div class="text-sm text-gray-600">
+                Padel, Padel 1 – Doubles
+            </div>
+            <div class="text-sm text-gray-500">
+                Indoor | Crystal | Double
+            </div>
+            <div class="text-sm text-gray-500">
+                Padel&Greenpoint
+            </div>
+        </div>
+
+        <!-- Vertical divider -->
+        <div class="mx-4 w-px bg-gray-200"></div>
+
+        <!-- Duration -->
+        <div class="flex items-center gap-1 text-sm text-gray-600 whitespace-nowrap">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+            </svg>
+            60 min
+        </div>
+    </div>
+
+
+    <hr class="border-0 border-t border-gray-200" />
+
+
+    <!-- PAY YOUR PART -->
+    <button class="w-full flex items-center justify-between p-6" (click)="select('split')">
+        <div class="flex items-center gap-6">
+
+            <!-- Radio -->
+            <div class="h-5 w-5 rounded-full border-2 flex items-center justify-center"
+                [ngClass]="selected === 'split' ? 'border-blue-600' : 'border-gray-300'">
+                @if (selected === 'split') {
+                <div class="h-2.5 w-2.5 rounded-full bg-blue-600"></div>
+                }
+            </div>
+
+            <!-- Card icon -->
+            <div class="relative w-10">
+                <svg class="h-10 w-10 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1">
+                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg>
+
+                <!-- Badge -->
+                <span
+                    class="absolute -bottom-1 -left-1 text-xs font-semibold bg-gray-800 text-white rounded-full px-1.5">
+                    x1
+                </span>
+            </div>
+
+            <div class="text-sm font-medium text-[#232E37]">
+                Pay your part
+            </div>
+        </div>
+
+        <div class="text-sm">
+            56 US$
+        </div>
+    </button>
+
+    <!-- PAY EVERYTHING -->
+    <button class="w-full flex items-center justify-between p-6" (click)="select('full')">
+        <div class="flex items-center gap-6">
+
+            <!-- Radio -->
+            <div class="h-5 w-5 rounded-full border-2 flex items-center justify-center"
+                [ngClass]="selected === 'full' ? 'border-blue-600' : 'border-gray-300'">
+                @if (selected === 'full') {
+                <div class="h-2.5 w-2.5 rounded-full bg-blue-600"></div>
+                }
+            </div>
+
+            <!-- Card icon -->
+            <div class="relative w-10">
+                <svg class="h-10 w-10 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1">
+                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg>
+
+                <!-- Badge -->
+                <span
+                    class="absolute -bottom-1 -left-1 text-xs font-semibold bg-blue-600 text-white rounded-full px-1.5">
+                    x4
+                </span>
+            </div>
+
+            <div class="text-sm font-medium text-[#232E37]">
+                Pay everything
+            </div>
+        </div>
+
+        <div class="text-sm">
+            224 US$
+        </div>
+    </button>
+
+    <!-- PAY AT LOCATION -->
+    <button class="w-full flex items-center justify-between p-6" (click)="select('location')">
+        <div class="flex items-center gap-6">
+
+            <!-- Radio -->
+            <div class="h-5 w-5 rounded-full border-2 flex items-center justify-center"
+                [ngClass]="selected === 'location' ? 'border-blue-600' : 'border-gray-300'">
+                @if (selected === 'location') {
+                <div class="h-2.5 w-2.5 rounded-full bg-blue-600"></div>
+                }
+            </div>
+
+            <!-- Location icon -->
+            <div class="w-10">
+                <svg class="h-7 w-7 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1">
+                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1118 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+            </div>
+
+
+            <div class="text-sm font-medium text-[#232E37]">
+                Pay at location
+            </div>
+        </div>
+
+        <div class="font-semibold text-sm text-gray-500">
+            —
+        </div>
+    </button>
+
+</div>

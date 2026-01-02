@@ -1,18 +1,19 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { BookingHeaderComponent } from '../../components/booking-header/booking-header.component';
+import { Component, inject } from '@angular/core';
 import { DatePickerComponent } from '../../components/date-picker/date-picker.component';
 import { TimePickerComponent } from '../../components/time-picker/time-picker.component';
 import { AvailabilityToggleComponent } from '../../components/available-only-toggle/availability-toggle.component';
 import { BookingSectionHeaderComponent } from '../../components/booking-section-header/booking-section-header.component';
 import { CourtSelectionItemComponent } from '../../components/court-selection-item/court-selection-item.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-booking-page',
-  imports: [BookingHeaderComponent, DatePickerComponent, AvailabilityToggleComponent, TimePickerComponent, BookingSectionHeaderComponent, CourtSelectionItemComponent],
+  imports: [DatePickerComponent, AvailabilityToggleComponent, TimePickerComponent, BookingSectionHeaderComponent, CourtSelectionItemComponent],
   templateUrl: './booking-page.component.html',
   styleUrl: './booking-page.component.css'
 })
 export class BookingPageComponent {
+  private router = inject(Router);
   showAvailableSlotsOnly!: boolean;
   showAvailableCourtsOnly!: boolean;
   expandedIndex = 0;
@@ -51,7 +52,13 @@ export class BookingPageComponent {
   ];
 
   onPricingSelected(e: { courtId: number; price: number; duration: string }) {
-    console.log("Selected pricing:", e);
+    this.router.navigate(['/checkout'], {
+      queryParams: {
+        courtId: e.courtId,
+        price: e.price,
+        duration: e.duration
+      }
+    });
   }
 
 }

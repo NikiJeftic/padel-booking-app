@@ -1,0 +1,13 @@
+<app-checkout-header title="Review" (close)="onCloseCheckout()"></app-checkout-header>
+
+<!-- Scrollable content -->
+<div class="px-5 py-4 gap-5 flex flex-col pb-32">
+    <app-payment-option [(selected)]="paymentType"></app-payment-option>
+    <app-checkout-legal-section></app-checkout-legal-section>
+</div>
+
+<!-- Fixed CTA -->
+<div class="fixed bottom-0 left-0 right-0 bg-white px-5 py-4 border-t border-gray-200">
+    <app-checkout-primary-cta label="Continue payment" [amount]="224" (action)="onContinue()">
+    </app-checkout-primary-cta>
+</div>
